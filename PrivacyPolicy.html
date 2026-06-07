@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy – Nutriguide</title>
+  <meta name="description" content="Nutriguide Privacy Policy – Learn how we collect, use, and protect your personal health and fitness data." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg-base:     #0b0f1a;
+      --bg-card:     #111827;
+      --bg-card2:    #1a2235;
+      --accent:      #4ade80;
+      --accent-dim:  #22c55e;
+      --accent-glow: rgba(74, 222, 128, 0.15);
+      --text-primary:#f1f5f9;
+      --text-muted:  #94a3b8;
+      --text-faint:  #64748b;
+      --border:      #1e2d3d;
+      --red:         #f87171;
+      --blue:        #60a5fa;
+      --yellow:      #fbbf24;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-base);
+      color: var(--text-primary);
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* ── Header ───────────────────────────────────── */
+    header {
+      position: relative;
+      overflow: hidden;
+      padding: 72px 24px 56px;
+      text-align: center;
+      background: linear-gradient(135deg, #0f1f2e 0%, #0b0f1a 60%);
+      border-bottom: 1px solid var(--border);
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% -10%, var(--accent-glow), transparent);
+      pointer-events: none;
+    }
+    .logo-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--bg-card2);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 6px 18px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    .logo-dot {
+      width: 8px; height: 8px;
+      background: var(--accent);
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.85); }
+    }
+    header h1 {
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: var(--text-primary);
+      margin-bottom: 14px;
+    }
+    header h1 span { color: var(--accent); }
+    header p {
+      font-size: 1rem;
+      color: var(--text-muted);
+      max-width: 520px;
+      margin: 0 auto 20px;
+    }
+    .last-updated {
+      display: inline-block;
+      background: var(--accent-glow);
+      border: 1px solid rgba(74, 222, 128, 0.3);
+      color: var(--accent);
+      border-radius: 6px;
+      padding: 4px 14px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    /* ── Layout ───────────────────────────────────── */
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 56px 24px 80px;
+    }
+
+    /* ── TOC ──────────────────────────────────────── */
+    .toc {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 48px;
+    }
+    .toc h2 {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+    .toc ol {
+      list-style: none;
+      counter-reset: toc-counter;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 6px 24px;
+    }
+    .toc li { counter-increment: toc-counter; }
+    .toc a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      padding: 4px 0;
+      transition: color 0.2s;
+    }
+    .toc a::before {
+      content: counter(toc-counter, decimal-leading-zero);
+      color: var(--text-faint);
+      font-size: 0.75rem;
+      font-weight: 600;
+      min-width: 22px;
+    }
+    .toc a:hover { color: var(--accent); }
+
+    /* ── Alert box ───────────────────────────────── */
+    .alert {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      background: var(--bg-card2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 22px;
+      margin-bottom: 40px;
+    }
+    .alert-icon { font-size: 1.4rem; line-height: 1; flex-shrink: 0; margin-top: 2px; }
+    .alert p { font-size: 0.9rem; color: var(--text-muted); }
+    .alert strong { color: var(--text-primary); }
+
+    /* ── Sections ────────────────────────────────── */
+    section { margin-bottom: 52px; scroll-margin-top: 32px; }
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+    .section-num {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px; height: 36px;
+      background: var(--accent-glow);
+      border: 1px solid rgba(74, 222, 128, 0.3);
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+    section h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+    section p, section li {
+      font-size: 0.93rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+    }
+    section p + p { margin-top: 12px; }
+
+    /* ── Cards ───────────────────────────────────── */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px 20px;
+    }
+    .card-icon { font-size: 1.5rem; margin-bottom: 10px; display: block; }
+    .card h3 { font-size: 0.85rem; font-weight: 600; color: var(--text-primary); margin-bottom: 6px; }
+    .card p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.55; }
+
+    /* ── Tag list ────────────────────────────────── */
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+    .tag {
+      background: var(--bg-card2);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 4px 12px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* ── Data table ──────────────────────────────── */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 18px;
+      font-size: 0.87rem;
+    }
+    .data-table thead th {
+      background: var(--bg-card2);
+      color: var(--text-faint);
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 10px 14px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    .data-table tbody td {
+      padding: 11px 14px;
+      color: var(--text-muted);
+      border-bottom: 1px solid rgba(30, 45, 61, 0.5);
+      vertical-align: top;
+    }
+    .data-table tbody tr:last-child td { border-bottom: none; }
+    .data-table tbody tr:hover td { background: var(--bg-card); }
+    .badge {
+      display: inline-block;
+      border-radius: 4px;
+      padding: 2px 8px;
+      font-size: 0.72rem;
+      font-weight: 600;
+    }
+    .badge-green { background: rgba(74,222,128,.15); color: var(--accent); }
+    .badge-red   { background: rgba(248,113,113,.15); color: var(--red); }
+    .badge-blue  { background: rgba(96,165,250,.15); color: var(--blue); }
+
+    /* ── Rights list ─────────────────────────────── */
+    .rights-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .rights-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 16px;
+    }
+    .rights-list li .ri { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
+    .rights-list li p { font-size: 0.83rem; line-height: 1.55; }
+
+    /* ── Divider ─────────────────────────────────── */
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 8px 0;
+    }
+
+    /* ── Contact box ─────────────────────────────── */
+    .contact-box {
+      background: linear-gradient(135deg, var(--bg-card2), var(--bg-card));
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      text-align: center;
+    }
+    .contact-box h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+    .contact-box p { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px; }
+    .contact-box a.btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #0b0f1a;
+      font-weight: 700;
+      font-size: 0.9rem;
+      border-radius: 8px;
+      padding: 12px 28px;
+      text-decoration: none;
+      transition: opacity 0.2s, transform 0.15s;
+    }
+    .contact-box a.btn:hover { opacity: 0.9; transform: translateY(-1px); }
+
+    /* ── Footer ──────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding: 28px 24px;
+    }
+    footer p { font-size: 0.8rem; color: var(--text-faint); }
+    footer span { color: var(--accent); }
+
+    @media (max-width: 600px) {
+      .toc ol { grid-template-columns: 1fr; }
+      .card-grid { grid-template-columns: 1fr; }
+      .rights-list { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════ HEADER ══════════════════ -->
+<header>
+  <div class="logo-badge"><span class="logo-dot"></span>Nutriguide</div>
+  <h1>Privacy <span>Policy</span></h1>
+  <p>We believe you have the right to know exactly how your personal health data is collected, used, and protected.</p>
+  <span class="last-updated">Last updated: June 7, 2026</span>
+</header>
+
+<!-- ══════════════════ MAIN ══════════════════ -->
+<main class="container">
+
+  <!-- Medical Disclaimer Alert -->
+  <div class="alert">
+    <span class="alert-icon">⚕️</span>
+    <p><strong>Medical Disclaimer:</strong> Nutriguide is designed for general health and fitness informational purposes only. It is <strong>not</strong> a medical device, and the content it generates is not a substitute for professional medical advice, diagnosis, or treatment. Always consult a qualified physician or registered dietitian before starting any diet or exercise program, especially if you have a medical condition.</p>
+  </div>
+
+  <!-- TOC -->
+  <nav class="toc" aria-label="Table of Contents">
+    <h2>Table of Contents</h2>
+    <ol>
+      <li><a href="#s1">Who We Are</a></li>
+      <li><a href="#s2">Information We Collect</a></li>
+      <li><a href="#s3">How We Use Your Information</a></li>
+      <li><a href="#s4">AI Processing &amp; Third-Party APIs</a></li>
+      <li><a href="#s5">Advertising (Unity Ads)</a></li>
+      <li><a href="#s6">Data Storage &amp; Security</a></li>
+      <li><a href="#s7">Data Sharing</a></li>
+      <li><a href="#s8">Data Retention</a></li>
+      <li><a href="#s9">Your Rights</a></li>
+      <li><a href="#s10">Children's Privacy</a></li>
+      <li><a href="#s11">Changes to This Policy</a></li>
+      <li><a href="#s12">Contact Us</a></li>
+    </ol>
+  </nav>
+
+  <!-- 1. Who We Are -->
+  <section id="s1">
+    <div class="section-header">
+      <div class="section-num">01</div>
+      <h2>Who We Are</h2>
+    </div>
+    <p>Nutriguide ("we", "our", or "us") is a mobile application developed and operated by an independent developer. The app is available on Android (Google Play) under the package name <code style="background:var(--bg-card2);padding:2px 7px;border-radius:4px;font-size:0.85em;color:var(--accent)">com.sabit.nutriguidemobile</code>.</p>
+    <p>We are committed to protecting your privacy and handling your personal health data responsibly and transparently. By using Nutriguide, you agree to the practices described in this Privacy Policy.</p>
+  </section>
+
+  <!-- 2. Information We Collect -->
+  <section id="s2">
+    <div class="section-header">
+      <div class="section-num">02</div>
+      <h2>Information We Collect</h2>
+    </div>
+    <p>To generate your personalized nutrition and workout plans, we collect the following categories of information:</p>
+
+    <div class="card-grid" style="margin-top:20px">
+      <div class="card">
+        <span class="card-icon">👤</span>
+        <h3>Personal Profile</h3>
+        <p>Age, gender, height, and current body weight. This is required to calculate your daily caloric needs and fitness goals.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">🎯</span>
+        <h3>Fitness Goals</h3>
+        <p>Your body goal (e.g., muscle gain, weight loss), target weight, activity level, workout days, and session duration.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">🏥</span>
+        <h3>Medical Conditions</h3>
+        <p>Any medical conditions or physical limitations you voluntarily provide to help tailor safer recommendations.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">📷</span>
+        <h3>Food Photos</h3>
+        <p>Images you submit for AI-based food and calorie analysis. Photos are sent to a third-party AI API and are not stored by us.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">🍽️</span>
+        <h3>Food Log</h3>
+        <p>Daily meal entries including food descriptions, calorie counts, and macronutrient data you log through the app.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">📱</span>
+        <h3>Device Info</h3>
+        <p>Basic device and app interaction data collected automatically for app functionality and crash reporting (OS version, device model).</p>
+      </div>
+    </div>
+
+    <p style="margin-top:20px">We collect <strong style="color:var(--text-primary)">only the minimum data necessary</strong> for the app to function. We never collect your real name, phone number, or financial information.</p>
+  </section>
+
+  <!-- 3. How We Use Your Information -->
+  <section id="s3">
+    <div class="section-header">
+      <div class="section-num">03</div>
+      <h2>How We Use Your Information</h2>
+    </div>
+
+    <table class="data-table" aria-label="Data usage table">
+      <thead>
+        <tr>
+          <th>Data</th>
+          <th>Purpose</th>
+          <th>Legal Basis</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Age, gender, height, weight</td>
+          <td>Calculate TDEE, BMI, and generate your personalized calorie and macro targets</td>
+          <td><span class="badge badge-blue">Consent</span></td>
+        </tr>
+        <tr>
+          <td>Fitness goal &amp; activity level</td>
+          <td>Tailor AI-generated workout plans and nutrition advice to your specific objective</td>
+          <td><span class="badge badge-blue">Consent</span></td>
+        </tr>
+        <tr>
+          <td>Medical conditions</td>
+          <td>Ensure AI recommendations are safe and appropriately modified for your health status</td>
+          <td><span class="badge badge-blue">Consent</span></td>
+        </tr>
+        <tr>
+          <td>Food images &amp; descriptions</td>
+          <td>Pass to the AI vision model to identify food items and estimate calories/macros</td>
+          <td><span class="badge badge-blue">Consent</span></td>
+        </tr>
+        <tr>
+          <td>Daily food log</td>
+          <td>Display your calorie history, progress charts, and remaining daily intake</td>
+          <td><span class="badge badge-blue">Consent</span></td>
+        </tr>
+        <tr>
+          <td>Device information</td>
+          <td>Ensure the app functions correctly and to debug crashes or errors</td>
+          <td><span class="badge badge-green">Legitimate Interest</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p style="margin-top:20px">We <strong style="color:var(--red)">do not</strong> use your data for profiling, targeted advertising, or any purpose beyond providing the core app features listed above.</p>
+  </section>
+
+  <!-- 4. AI Processing -->
+  <section id="s4">
+    <div class="section-header">
+      <div class="section-num">04</div>
+      <h2>AI Processing &amp; Third-Party APIs</h2>
+    </div>
+    <p>Nutriguide uses AI language and vision models to generate personalized plans and analyze food. The following third-party services process your data as part of this functionality:</p>
+
+    <div class="card" style="margin-top:18px;max-width:100%">
+      <span class="card-icon">🤖</span>
+      <h3>Google AI Studio — Gemma 4 Model</h3>
+      <p>Your health profile data and food images are sent to Google AI Studio to generate nutrition plans, workout plans, goal recommendations, and food analysis results. When you submit a food photo, that image is transmitted to Google's servers for processing. Google's use of this data is governed by the <strong>Google API Services User Data Policy</strong>. Nutriguide does not store your food images on its own servers.</p>
+    </div>
+
+    <div class="card" style="margin-top:12px;max-width:100%">
+      <span class="card-icon">⚡</span>
+      <h3>Groq API — Text Processing (Fallback)</h3>
+      <p>In some cases, text-based requests (such as initial profile setup or goal recommendations) may be processed via the Groq API using large language models. The data sent is limited to your anonymized health profile attributes (no personally identifying information).</p>
+    </div>
+
+    <p style="margin-top:16px">We strongly encourage you to review the privacy policies of these third-party providers. Nutriguide is not responsible for the data practices of external API providers once data is transmitted to their services.</p>
+  </section>
+
+  <!-- 5. Advertising -->
+  <section id="s5">
+    <div class="section-header">
+      <div class="section-num">05</div>
+      <h2>Advertising (Unity Ads)</h2>
+    </div>
+    <p>Nutriguide displays <strong style="color:var(--text-primary)">rewarded advertisements</strong> through Unity Ads (provided by Unity Technologies). These ads allow you to unlock additional daily food scans and features for free.</p>
+    <p>Unity Ads may collect the following information to serve ads:</p>
+    <div class="tag-list">
+      <span class="tag">Advertising ID (GAID)</span>
+      <span class="tag">Device model &amp; OS version</span>
+      <span class="tag">IP address (approximate location)</span>
+      <span class="tag">App interaction data</span>
+      <span class="tag">Ad view and click events</span>
+    </div>
+    <p style="margin-top:16px">Unity Ads operates independently from Nutriguide's data collection. You can opt out of personalized advertising by resetting your Google Advertising ID in your Android device settings under <strong style="color:var(--text-primary)">Settings → Privacy → Ads</strong>.</p>
+    <p>For more information, please review the <a href="https://unity.com/legal/privacy-policy" target="_blank" rel="noopener" style="color:var(--accent)">Unity Technologies Privacy Policy</a>.</p>
+  </section>
+
+  <!-- 6. Data Storage & Security -->
+  <section id="s6">
+    <div class="section-header">
+      <div class="section-num">06</div>
+      <h2>Data Storage &amp; Security</h2>
+    </div>
+    <p>Your data is stored in two places:</p>
+    <div class="card-grid" style="margin-top:14px">
+      <div class="card">
+        <span class="card-icon">📱</span>
+        <h3>On Your Device (Local Storage)</h3>
+        <p>Your full health profile, nutrition plan, workout plan, and food log are stored locally on your device using secure device storage. This data never leaves your device unless you explicitly use an AI feature.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">☁️</span>
+        <h3>Cloud (Future / Optional)</h3>
+        <p>If cloud sync features are enabled, data may be stored securely using Firebase / Firestore with industry-standard AES-256 encryption at rest. You will be explicitly informed before any cloud sync is enabled.</p>
+      </div>
+    </div>
+    <p style="margin-top:16px">We implement the following security measures:</p>
+    <ul style="list-style:disc;padding-left:20px;margin-top:10px">
+      <li>All data transmitted to AI APIs is sent over HTTPS with TLS encryption.</li>
+      <li>We do not maintain any backend server that stores your personal data.</li>
+      <li>Food images sent for analysis are not retained or logged by us after the API call completes.</li>
+      <li>No passwords or financial information are ever collected.</li>
+    </ul>
+  </section>
+
+  <!-- 7. Data Sharing -->
+  <section id="s7">
+    <div class="section-header">
+      <div class="section-num">07</div>
+      <h2>Data Sharing</h2>
+    </div>
+    <p>We <strong style="color:var(--text-primary)">do not sell, rent, or trade</strong> your personal information to any third party for marketing or commercial purposes. Data sharing is strictly limited to what is necessary to operate the app:</p>
+
+    <table class="data-table" aria-label="Data sharing table" style="margin-top:16px">
+      <thead>
+        <tr>
+          <th>Third Party</th>
+          <th>What is Shared</th>
+          <th>Why</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Google AI Studio</td>
+          <td>Health profile attributes, food images</td>
+          <td>AI plan generation &amp; food analysis</td>
+        </tr>
+        <tr>
+          <td>Groq API</td>
+          <td>Anonymized health profile attributes (text only)</td>
+          <td>AI text generation (fallback)</td>
+        </tr>
+        <tr>
+          <td>Unity Technologies</td>
+          <td>Device advertising ID, app interaction data</td>
+          <td>Displaying rewarded video ads</td>
+        </tr>
+        <tr>
+          <td>Legal Authorities</td>
+          <td>Data required by valid legal order</td>
+          <td>Compliance with applicable law</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p style="margin-top:16px">We never share your data with data brokers, analytics platforms, or marketing agencies.</p>
+  </section>
+
+  <!-- 8. Data Retention -->
+  <section id="s8">
+    <div class="section-header">
+      <div class="section-num">08</div>
+      <h2>Data Retention</h2>
+    </div>
+    <p>Because your data is stored locally on your device, <strong style="color:var(--text-primary)">you are in full control of its retention</strong>:</p>
+    <ul style="list-style:disc;padding-left:20px;margin-top:10px">
+      <li>Your profile and food log data remain on your device until you manually delete your account or uninstall the app.</li>
+      <li>Food images submitted for analysis are processed in real time and are <strong>not</strong> retained by us after the response is received.</li>
+      <li>If cloud sync is active, you can request deletion of your cloud data at any time by contacting us.</li>
+      <li>AI-generated plans (nutrition plan, workout plan) are stored locally and are deleted when you reset your profile or uninstall the app.</li>
+    </ul>
+  </section>
+
+  <!-- 9. Your Rights -->
+  <section id="s9">
+    <div class="section-header">
+      <div class="section-num">09</div>
+      <h2>Your Rights</h2>
+    </div>
+    <p>Depending on your location (including users in the EU/EEA under GDPR, California users under CCPA, and others), you have the following rights regarding your personal data:</p>
+    <ul class="rights-list" role="list">
+      <li>
+        <span class="ri">🔍</span>
+        <p><strong style="color:var(--text-primary)">Right to Access</strong><br/>Request a copy of the personal data we hold about you.</p>
+      </li>
+      <li>
+        <span class="ri">✏️</span>
+        <p><strong style="color:var(--text-primary)">Right to Rectification</strong><br/>Correct any inaccurate or incomplete data in your profile directly within the app.</p>
+      </li>
+      <li>
+        <span class="ri">🗑️</span>
+        <p><strong style="color:var(--text-primary)">Right to Erasure</strong><br/>Request deletion of your personal data. Local data can be deleted by uninstalling the app.</p>
+      </li>
+      <li>
+        <span class="ri">🚫</span>
+        <p><strong style="color:var(--text-primary)">Right to Restrict Processing</strong><br/>Limit how we use your data by not using AI features that require data transmission.</p>
+      </li>
+      <li>
+        <span class="ri">📦</span>
+        <p><strong style="color:var(--text-primary)">Right to Data Portability</strong><br/>Export your data in a readable format (available in app settings).</p>
+      </li>
+      <li>
+        <span class="ri">↩️</span>
+        <p><strong style="color:var(--text-primary)">Right to Withdraw Consent</strong><br/>Stop using any feature at any time. Your consent can be withdrawn by discontinuing use of that feature.</p>
+      </li>
+    </ul>
+    <p style="margin-top:20px">To exercise any of these rights, please contact us at the email address listed in Section 12.</p>
+  </section>
+
+  <!-- 10. Children's Privacy -->
+  <section id="s10">
+    <div class="section-header">
+      <div class="section-num">10</div>
+      <h2>Children's Privacy</h2>
+    </div>
+    <p>Nutriguide is intended for users who are <strong style="color:var(--text-primary)">13 years of age or older</strong>. We do not knowingly collect personal information from children under the age of 13. If you are a parent or guardian and believe your child has provided us with personal information, please contact us immediately so we can take appropriate action to delete that information.</p>
+    <p>For users between 13 and 17 years of age, we recommend that a parent or guardian review this Privacy Policy and supervise use of the application.</p>
+  </section>
+
+  <!-- 11. Changes -->
+  <section id="s11">
+    <div class="section-header">
+      <div class="section-num">11</div>
+      <h2>Changes to This Policy</h2>
+    </div>
+    <p>We may update this Privacy Policy from time to time to reflect changes in our practices, technology, legal requirements, or other factors. When we make significant changes, we will:</p>
+    <ul style="list-style:disc;padding-left:20px;margin-top:10px">
+      <li>Update the "Last Updated" date at the top of this page.</li>
+      <li>Display an in-app notification informing you of the update.</li>
+      <li>For material changes that affect how we process sensitive health data, we will request your consent again before continuing to process that data.</li>
+    </ul>
+    <p style="margin-top:12px">We encourage you to review this policy periodically. Your continued use of the app after any changes constitutes your acceptance of the updated policy.</p>
+  </section>
+
+  <!-- 12. Contact -->
+  <section id="s12">
+    <div class="section-header">
+      <div class="section-num">12</div>
+      <h2>Contact Us</h2>
+    </div>
+    <p>If you have any questions, concerns, or requests regarding this Privacy Policy or how we handle your personal data, please do not hesitate to reach out:</p>
+    <div class="contact-box" style="margin-top:20px">
+      <h3>Get in Touch</h3>
+      <p>We aim to respond to all privacy-related inquiries within <strong style="color:var(--text-primary)">5 business days</strong>.</p>
+      <a href="mailto:privacy@nutriguide.app" class="btn">📧 Contact Us</a>
+    </div>
+  </section>
+
+</main>
+
+<!-- ══════════════════ FOOTER ══════════════════ -->
+<footer>
+  <p>© 2026 <span>Nutriguide</span>. All rights reserved. &nbsp;·&nbsp; <code style="font-size:0.78em;color:var(--text-faint)">com.sabit.nutriguidemobile</code></p>
+  <p style="margin-top:6px">This app is for informational purposes only and is not a substitute for professional medical advice.</p>
+</footer>
+
+</body>
+</html>
